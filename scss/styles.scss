@@ -1,3 +1,86 @@
-h1 {
-  color: red;
+$primary-color: #042940;
+$secondary-color: #005c53;
+$success-color: #9fc131;
+$warning-color: #dbf227;
+$error-color: #d6d58e;
+$white-color: #ffffff;
+$black-color: #000000;
+$z-index-1: 1;
+$z-index-2: 10;
+$z-index-3: 100;
+$z-index-full: 9999999999999;
+
+@mixin btn-props-by-color($bg, $color) {
+  background: $bg;
+  color: $color;
+
+  &:hover,
+  &:focus {
+    outline: rgba($bg, 0.5) 2px solid;
+  }
+}
+
+.btn {
+  border: none;
+  padding: 10px 15px;
+
+  &--primary {
+    @include btn-props-by-color($primary-color, $white-color);
+  }
+
+  &--secondary {
+    @include btn-props-by-color($secondary-color, $white-color);
+  }
+
+  &--rounded {
+    border-radius: 4px;
+  }
+}
+
+.modal {
+
+  &__overlay,
+  & {
+    display: none;
+  }
+
+  &__overlay--active {
+    background-color: rgba($black-color, .7);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--active {
+    display: initial;
+    background-color: $white-color;
+    min-width: 500px;
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__close {
+      width: 30px;
+      height: 30px;
+      border: none;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+      
+    }
+  }
+  
 }

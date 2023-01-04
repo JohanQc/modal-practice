@@ -1,5 +1,60 @@
-h1 {
-  color: red;
+.btn {
+  border: none;
+  padding: 10px 15px;
+}
+.btn--primary {
+  background: #042940;
+  color: #ffffff;
+}
+.btn--primary:hover, .btn--primary:focus {
+  outline: rgba(4, 41, 64, 0.5) 2px solid;
+}
+.btn--secondary {
+  background: #005c53;
+  color: #ffffff;
+}
+.btn--secondary:hover, .btn--secondary:focus {
+  outline: rgba(0, 92, 83, 0.5) 2px solid;
+}
+.btn--rounded {
+  border-radius: 4px;
+}
+
+.modal__overlay, .modal {
+  display: none;
+}
+.modal__overlay--active {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal--active {
+  display: initial;
+  background-color: #ffffff;
+  min-width: 500px;
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+}
+.modal--active__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal--active__close {
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+.modal--active__close svg {
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */
