@@ -39,6 +39,9 @@ $z-index-full: 9999999999999;
 
 .modal {
 
+    & {
+      position: relative;
+    }
   &__overlay,
   & {
     display: none;
@@ -56,8 +59,10 @@ $z-index-full: 9999999999999;
     justify-content: center;
   }
 
-  &--active {
+  &--active{
     display: initial;
+  }
+  &{
     background-color: $white-color;
     min-width: 500px;
     width: 100%;
@@ -74,6 +79,13 @@ $z-index-full: 9999999999999;
       width: 30px;
       height: 30px;
       border: none;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
 
       svg {
         width: 100%;
