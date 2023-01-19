@@ -1,4 +1,11 @@
-import { closeModal, openModal, renderPosts, posts } from "./utils.js";
+import {
+  closeModal,
+  openModal,
+  renderPosts,
+  posts,
+  createPost,
+  deletePost,
+} from "./utils.js";
 
 const openModalBtn = document.getElementById("open-modal-btn");
 const btnClose = document.getElementById("btn-Close");
@@ -18,9 +25,9 @@ btnBack.addEventListener("click", closeModal);
 btnCancel.addEventListener("click", closeModal);
 
 btnCreate.addEventListener("click", function () {
-  const imgValue = inputImg.value
-  const descriptionValue = inputDescription.value
-  const titleValue = inputTitle.value
+  const imgValue = inputImg.value;
+  const descriptionValue = inputDescription.value;
+  const titleValue = inputTitle.value;
   if (
     [imgValue, descriptionValue, titleValue].filter((item) => item).length !== 3
   ) {
@@ -28,15 +35,19 @@ btnCreate.addEventListener("click", function () {
     return;
   }
 
-  posts.push({
+  const post = {
     img: imgValue,
     title: titleValue,
     description: descriptionValue,
     id: new Date().valueOf(),
-  });
+  };
+
+  createPost(post, posts);
   renderPosts();
   closeModal();
   localStorage.setItem("posts", JSON.stringify(posts));
 });
 
 renderPosts();
+
+  

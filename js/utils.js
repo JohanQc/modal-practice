@@ -21,7 +21,11 @@ export function openModal() {
 
 export function renderPosts() {
   if (posts.length === 0) {
-    const emptyHTLM = `<div class="posts__no-cards"><div class="posts__no-cards__card"></div><h2>No post</h2><div>You no have a post, please create the first:)</div><button id="createPost" class="btn btn--secondary">Create a post +</button></div>`;
+    const emptyHTLM = `<div class="posts__no-cards">
+    <div class="posts__no-cards__card"></div>
+    <h2>No post</h2>
+    <div>You no have a post, please create the first:)</div>
+    <button id="createPost" class="btn btn--secondary">Create a post +</button></div>`;
     postsContainerHTML.innerHTML = emptyHTLM;
     const createPost = document.getElementById("createPost");
     createPost.addEventListener("click", openModal);
@@ -33,7 +37,7 @@ export function renderPosts() {
     .map(
       (post) => `
       <div class="card">
-        <button class="card__close modal__close" data-id="${post.id}>
+        <button class="card__close modal__close" id="deletePostBtn" data-id="${post.id}" data-johan="${post.description}">
           <i class="fa-sharp fa-solid fa-xmark"></i>
         </button>
         <img src="${post.img}"/>
@@ -46,4 +50,27 @@ export function renderPosts() {
     .reverse()
     .join(" ");
   postsContainerHTML.innerHTML = postsHTML;
+  
+  const deletePostsBtn = document.querySelectorAll("#deletePostBtn");
+  deletePostsBtn.forEach((item) => {
+    item.addEventListener("click", function (event) {
+      const id = item.dataset.id;
+      deletePost(id);
+      renderPosts();
+      localStorage.setItem("posts", JSON.stringify(posts));
+      if (posts.length === 0) {
+        postsContainerHTML.classList.remove("posts");
+      }
+      
+    });
+  });
+}
+
+export function createPost(post) {
+  posts.push(post)
+}
+
+export function deletePost(id) {
+  const index = posts.map(item => item.id).indexOf(id)
+  posts.splice(index, 1)
 }
