@@ -1,60 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title></title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Nunito:wght@200;300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./fonts-6/css/all.css">
-  </head>
 
-  <body>
-    <main class="main">
+<head>
+  <title></title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Nunito:wght@200;300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./fonts-6/css/all.css">
+</head>
+
+<body>
+  <main class="main">
     <div id="container_btn" class="container-btn"></div>
-    <button
-      id="open-modal-btn"
-      class="btn btn--primary btn--rounded open-modal-btn"
-    >
+    <button id="open-modal-btn" class="btn btn--primary btn--rounded open-modal-btn">
       Create a post
     </button>
     <div id="modal__overlay" class="modal__overlay">
       <div id="modal" class="modal">
         <div class="modal__is-live">
           <div class="modal__header">
-           <button id="btn-Back" class="modal__close__back">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-x"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-                /><i class="fa-brands fa-square-facebook"></i>
-              </svg>
+            <button id="btn-Back" class="modal__close__back">
+              <i class="fa-solid fa-arrow-left"></i>
             </button>
             <h2 class="modal__title">Create a post in this web</h2>
             <button id="btn-Close" class="modal__close">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-x"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-                />
-              </svg>
+              <i class="fa-sharp fa-solid fa-xmark"></i>
             </button>
           </div>
           <p class="modal__description">
@@ -64,44 +39,47 @@
           <div class="modal__input--section">
             <h2 class="modal__title-post">Referensial image</h2>
             <input id="inputImg" class="modal__input--section--input" placeholder="Insert image" type="text" />
-    <p id="valuesImg"></p>
+            <p id="valuesImg"></p>
           </div>
           <div class="modal__input--section">
             <h2 class="modal__title-post">Post name</h2>
             <input id="inputTitle" class="modal__input--section--input" placeholder="Insert title" type="text" />
-    <p id="valuesTittle"></p>
+            <p id="valuesTittle"></p>
           </div>
           <div class="modal__input--section">
             <h2 class="modal__title-post">Description</h2>
-            <textarea id="inputDescription" class="modal__input--section--input modal__input--section--input--description" type="text"></textarea>
-          <div class="modal__buttons">
-            <button id="btn-create" class="btn btn--primary">Create</button>
-            <button id="btn-cancel" class="btn btn--text">Cancel</button>
+            <textarea id="inputDescription"
+              class="modal__input--section--input modal__input--section--input--description" type="text"></textarea>
+            <div class="modal__buttons">
+              <button id="btn-create" class="btn btn--primary">Create</button>
+              <button id="btn-cancel" class="btn btn--text">Cancel</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </main>
-      <section class="card__section">
-        <h2 class="publication-title">My publications</h2>
-        <div id="posts"></div>
-      </section>
+  <section class="card__section">
+    <h2 class="publication-title">My publications</h2>
+    <div id="posts"></div>
+  </section>
   <footer class="footer">
     <div class="wave" id="wave1"></div>
     <div class="wave" id="wave2"></div>
     <div class="wave" id="wave3"></div>
     <div class="wave" id="wave4"></div>
-    
-  <section class="footer__social">
-    <ul class="footer__social__ul">
-  <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
-  <li><a href="#"><i class="fa-brands fa-square-github"></i></a></li>
-  <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
-  <li><a href="#"><i class="fa-solid fa-star-half"></i></a></li>
-    </ul>
-  </section>
+
+    <section class="footer__social">
+      <ul class="footer__social__ul">
+        <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-square-github"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+        <li><a href="#"><i class="fa-solid fa-star-half"></i></a></li>
+      </ul>
+    </section>
   </footer>
-    <img src="../learn-sass/img/Untitled.png" alt="">
-    <script src="./main.js"></script>
-  </body>
+  <img src="../learn-sass/img/Untitled.png" alt="">
+  <script src="./main.js"></script>
+</body>
+
 </html>

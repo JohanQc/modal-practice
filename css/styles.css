@@ -106,6 +106,7 @@ h2 {
 .modal__close__back:hover {
   cursor: pointer;
   background-color: #038c7f;
+  color: #f2e7dc;
 }
 .modal__close__back svg {
   width: 100%;
@@ -132,6 +133,9 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.modal__overlay--active i {
+  font-size: 30px;
 }
 .modal--active {
   display: initial;
@@ -279,16 +283,16 @@ h2 {
   overflow: hidden;
   position: relative;
 }
-.card svg {
-  width: 40px;
-  height: 40px;
+.card i {
+  font-size: 30px;
 }
 .card__close {
   width: 40px;
   position: absolute;
   height: 40px;
   top: 0;
-  right: -5;
+  right: 0;
+  color: #f2e7dc;
 }
 .card__section {
   padding: 100px 0 300px;
